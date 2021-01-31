@@ -18,7 +18,13 @@ Do the following:
    HINT: no function required
 */
 
-
+let votingAge = 21;
+if (votingAge >= 21) {
+    console.log(true);
+}
+else {
+    console.log("Sorry you aren't old enough to participate in America's absurd two-party system yet");
+}
 
 /*
 Task 1b - Values
@@ -31,9 +37,14 @@ Do the following:
    HINT: no function required
 */
 
+let firstVariable = 1;
+let secondVariable = 2;
 
+if (secondVariable >= 0) {
+    firstVariable = secondVariable * 5;
+}
 
-
+console.log(firstVariable);
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -46,7 +57,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let strVariable = "1999";
+strVariable = 1999;
+console.log(strVariable);
 
 
 /*
@@ -58,11 +71,12 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b) {
+    let exerciseAnswer = a * b;
+    return exerciseAnswer;
   }
 
-
+multiply(3, 18);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,11 +88,12 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanAge) {
+    let dogAge = humanAge * 7;
+    return dogAge;
 }
 
-
+dogYears(28);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,8 +122,40 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age) {
+    let foodAmount = 0;
+    if (age < (1/6)) {
+        console.log("The pup is should receive milk not food.")
+    }
+    else if (age < (1/3)) {
+        foodAmount = 0.1 * weight;
+        return foodAmount;
+    }
+    else if (age < (7/12)) {
+        foodAmount = 0.05 * weight;
+        return foodAmount;
+    }
+    else if (age < 1) {
+        foodAmount = 0.04 * weight;
+        return foodAmount;
+    }
+    else {
+        if (weight <= 5) {
+            foodAmount = 0.05 * weight;
+        }
+        else if (weight <= 10) {
+            foodAmount = 0.04 * weight;
+        }
+        else if (weight <= 15) {
+            foodAmount = 0.03 * weight;
+        }
+        else {
+            foodAmount = 0.02 * weight;
+        }
+        
+        return foodAmount;
+    }
+    
   }
 
 
@@ -134,8 +181,32 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let computerChoice = Math.ceil(3*Math.random());
+let computer = "";
+if (computerChoice === 1) {
+    computer = "rock";
+}
+else if (computerChoice === 2) {
+    computer = "paper";
+}
+else {
+    computer = "scissors";
+}
+
 function game(user, computer){
-    /*add your code here*/
+    let userWin = "you win!"
+    let userLoss = "you lose!"
+    let userTie = "it's a tie"
+
+    if (user === computer) {
+        return userTie;
+    }
+    else if ((user === "rock" && computer === "paper") || (user === "paper" && computer === "scissors") || (user === "scissors" && computer === "rock")) {
+        return userLoss;
+    }
+    else {
+        return userWin;
+    }
 }
   
   
@@ -151,8 +222,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(numberKilos) {
+    let numberMiles = numberKilos * 0.621371;
+    return numberMiles;
   }
 
 
@@ -165,8 +237,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(numCentimeters){
+    let numFeet = numCentimeters / 30.48;
+    return numFeet;
   }
  
 
@@ -181,8 +254,14 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(startNumber){
+        let num1 = startNumber;
+        let num2 = startNumber - 1;
+        for (let i = 0; i < startNumber; i++) {
+            return `${num1} bottles of soda on the wall, ${num1} bottles of soda, take one down pass it around ${num2} bottles of soda on the wall`
+            num1 --;
+            num2 --;
+        }
   }
 
 
@@ -201,8 +280,25 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(numberGrade) {
+    let letterGrade = "";
+    if (numberGrade >= 90) {
+        letterGrade = "an A";
+    }
+    else if (numberGrade >= 80) {
+        letterGrade = "a B";
+    }
+    else if (numberGrade >= 70) {
+        letterGrade = "a C";
+    }
+    else if (numberGrade >= 60) {
+        letterGrade = "a D";
+    }
+    else {
+        letterGrade = "an F";
+    }
+    
+    return `you got ${letterGrade}`
   }
   
   
@@ -220,8 +316,30 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(inputString) {
+    inputString = inputString.toLowerCase();
+    let vowelCount = 0;
+
+    for (let i = 0; i < inputString.length(); i++) {
+        if (inputString.includes("a", i)) {
+            vowelCount++;
+        }
+        else if (inputString.includes("e", i)) {
+            vowelCount++;
+        }
+        else if (inputString.includes("i", i)) {
+            vowelCount++;
+        }
+        else if (inputString.includes("o", i)) {
+            vowelCount++;
+        }
+        else if (inputString.includes("u", i)) {
+            vowelCount++;
+        }
+        else {}
+    }
+    return vowelCount;
+
 }
 
 
