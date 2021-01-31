@@ -319,7 +319,7 @@ Using the vowelCounter function below do the following:
 function vowelCounter(inputString) {
     inputString = inputString.toLowerCase();
     let vowelCount = 0;
-    
+
     for (let i = 0; i < inputString.length(); i++) {
         if (inputString.includes("a", i)) {
             vowelCount++;
